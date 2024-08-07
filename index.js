@@ -12,7 +12,7 @@ const DB_URI='mongodb+srv://gagan:ifdHNZMATHECM94g@cluster0.uxby9nn.mongodb.net/
 mongoose.connect(DB_URI).then(()=>console.log('DB connected')).catch((err)=>{
     console.log(err)
 })
-
+console.log('hello')
 app.get('/', (req, res) => res.send('ok'));
 
 // Mount the loginRouter on the '/v1/login' path
