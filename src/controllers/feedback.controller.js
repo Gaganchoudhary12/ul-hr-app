@@ -16,8 +16,14 @@ export const getFeedbackQuestion = async (req, res) => {
 export const submitFeedback = async (req, res) => {
   const { type, comment, stars } = req.body;
   try {
-    if (!type) res.status(400).send({ message: "type is required" });
-    if (!comment) res.status(400).send({ message: "comment is required" });
+    if (!type) {
+      res.status(400).send({ message: "type is required" });
+      return
+    }
+    if (!comment) {
+      res.status(400).send({ message: "comment is required" });
+      return
+    }
 
     const data = Feedback.create({ type, comment, stars });
     res.status(200).send({ message: "submitted" });
