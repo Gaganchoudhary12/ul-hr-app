@@ -23,7 +23,11 @@ export const setUserRating = async (req, res) => {
 
     await UserRating.updateOne(
       { email, date },
-      { $push: { [title]: { [question]: rating } } },
+      {
+        $set: {
+          [`${title}.${question}`]: rating,
+        },
+      },
       { upsert: true }
     );
     res.status(200).send({ message: "good work" });
