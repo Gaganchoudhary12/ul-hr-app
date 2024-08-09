@@ -14,17 +14,21 @@ export const getFeedbackQuestion = async (req, res) => {
 };
 
 export const submitFeedback = async (req, res) => {
-  const { type, comment, stars } = req.body;
+  const { type, comment, rating, date } = req.body;
   try {
     if (!type) {
       res.status(400).send({ message: "type is required" });
-      return
+      return;
     }
     if (!comment) {
       res.status(400).send({ message: "comment is required" });
-      return
+      return;
     }
-    const data = await Feedback.create({ type, comment, stars });
+    if (!date) {
+      res.status(400).send({ message: "date is required" });
+      return;
+    }
+    const data = await Feedback.create({ type, comment, rating, date });
     res.status(200).send({ message: "submitted" });
   } catch (error) {
     res.status(500).send({ message: "server error" });
