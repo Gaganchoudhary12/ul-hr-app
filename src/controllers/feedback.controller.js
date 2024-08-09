@@ -28,7 +28,7 @@ export const submitFeedback = async (req, res) => {
       res.status(400).send({ message: "date is required" });
       return;
     }
-    const data = await Feedback.create({ type, comment, rating, date });
+    const data = await Feedback.create({ type, comment, rating, date:new Date(date) });
     res.status(200).send({ message: "submitted" });
   } catch (error) {
     res.status(500).send({ message: "server error" });
