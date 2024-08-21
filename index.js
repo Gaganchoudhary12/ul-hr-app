@@ -5,6 +5,7 @@ import loginRouter from './src/routes/login.js'
 import userRouter from './src/routes/user.js'
 import questionRouter from './src/routes/question.js'
 import feedbackRouter from './src/routes/feedback.js'
+import bannerRouter from './src/routes/banner.js'
 
 const app = express();
 app.use(express.json());
