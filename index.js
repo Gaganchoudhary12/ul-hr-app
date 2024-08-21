@@ -23,6 +23,7 @@ app.use(`${baseRoute}/login`, loginRouter);
 app.use(`${baseRoute}/user`, userRouter)
 app.use(`${baseRoute}/questions`, questionRouter)
 app.use(`${baseRoute}/feedback`, feedbackRouter)
+app.use(`${baseRoute}/banner`, bannerRouter)
 
 app.listen(8002, () => {
     console.log('Server running on port 8002');
