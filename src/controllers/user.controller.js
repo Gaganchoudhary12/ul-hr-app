@@ -40,7 +40,7 @@ export const getUserRating = async (req, res) => {
   const { email, date } = req.body;
 
   try {
-    if (!email || !date || !title || !question || !rating) {
+    if (!email || !date) {
       const missingFields = [!email && "email", !date && "date"].filter(
         Boolean
       );
