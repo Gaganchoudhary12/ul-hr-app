@@ -5,7 +5,16 @@ export const getBanners = async (req, res) => {
   try {
     const bannerCategory = await Banner.distinct("title");
     for (const key of bannerCategory) {
-      const data = await Banner.find({ title: key, status:true },{_id:0});
+      const todayDate = new Date();
+
+      const data = await Banner.find(
+        {
+          title: key,
+          startDate: { $lte: todayDate.toISOString() },
+          endDate: { $gte: todayDate.toISOString() },
+        },
+        { _id: 0 }
+      );
       banner.push({ title: key, data });
     }
     res.status(200).send(banner);
