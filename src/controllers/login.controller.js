@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { isValidEmail } from "../util/emailValidation.js";
 
 const SchemaCommon = new mongoose.Schema({}, { strict: false });
-const Employee = mongoose.model("employee", SchemaCommon, "employee");
+const Employee = mongoose.model("employees", SchemaCommon, "employees");
 
 export const login = async (req, res) => {
   const { email } = req.body;
