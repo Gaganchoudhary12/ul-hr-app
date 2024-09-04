@@ -6,6 +6,7 @@ import userRouter from './src/routes/user.js'
 import questionRouter from './src/routes/question.js'
 import feedbackRouter from './src/routes/feedback.js'
 import bannerRouter from './src/routes/banner.js'
+import eventsRouter from './src/routes/events.js'
 
 const app = express();
 app.use(express.json());
@@ -25,6 +26,7 @@ app.use(`${baseRoute}/user`, userRouter)
 app.use(`${baseRoute}/questions`, questionRouter)
 app.use(`${baseRoute}/feedback`, feedbackRouter)
 app.use(`${baseRoute}/banner`, bannerRouter)
+app.use(`${baseRoute}/events`, eventsRouter)
 
 app.listen(8002, () => {
     console.log('Server running on port 8002');
