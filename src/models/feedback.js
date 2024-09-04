@@ -4,6 +4,6 @@ const SchemaCommon = new mongoose.Schema(
   {},
   { strict: false, versionKey: false }
 );
-const Feedback = mongoose.model("feedback", SchemaCommon, "feedback");
+const Feedback = mongoose.model("feedbacks", SchemaCommon, "feedbacks");
 
 export default Feedback;
