@@ -8,6 +8,7 @@ import feedbackRouter from './src/routes/feedback.js'
 import bannerRouter from './src/routes/banner.js'
 import eventsRouter from './src/routes/events.js'
 import reportingRouter from './src/routes/reporting.js'
+import managerRouter from './src/routes/manager.js'
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,7 @@ app.get('/', (req, res) => res.send('ok'));
 const baseRoute = '/v1'
 app.use(`${baseRoute}/login`, loginRouter);
 app.use(`${baseRoute}/user`, userRouter)
+app.use(`${baseRoute}/manager`, managerRouter)
 app.use(`${baseRoute}/questions`, questionRouter)
 app.use(`${baseRoute}/feedback`, feedbackRouter)
 app.use(`${baseRoute}/banner`, bannerRouter)
