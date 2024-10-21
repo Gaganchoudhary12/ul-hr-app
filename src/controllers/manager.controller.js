@@ -3,9 +3,9 @@ import UserRating from "../models/managers.js";
 import { isValidEmail } from "../util/emailValidation.js";
 
 export const setUserRating = async (req, res) => {
-  const { email, date, title, question, rating } = req.body;
+  const { email, date, title, question, rating, managerEmail } = req.body;
   try {
-    if (!email || !date || !title || !question || !rating) {
+    if (!email || !date || !title || !question || !rating || !managerEmail) {
       const missingFields = [
         !managerEmail && "managerEmail",
         !email && "email",
@@ -22,10 +22,11 @@ export const setUserRating = async (req, res) => {
       return res.status(400).send("Valid email address is required");
     }
     await UserRating.updateOne(
-      { email, date, managerEmail },
+      { email, date },
       {
         $set: {
           [`${title}.${question}`]: rating,
+          managerEmail: managerEmail,
         },
       },
       { upsert: true }
