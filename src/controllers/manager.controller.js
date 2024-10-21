@@ -54,7 +54,7 @@ export const getUserRating = async (req, res) => {
     }
     const data = await UserRating.find(
       { email, date },
-      { email: 0, date: 0, _id: 0 }
+      { email: 0, date: 0, _id: 0, managerEmail:0 }
     );
     res.status(200).send(data[0]);
   } catch (error) {
