@@ -3,6 +3,6 @@ import { reporting } from '../controllers/reporting.controller.js';
 
 const reportingRouter = express.Router();
 
-reportingRouter.get('/', reporting);
+reportingRouter.post('/', reporting);
 
 export default reportingRouter
