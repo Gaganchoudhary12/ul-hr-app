@@ -22,7 +22,7 @@ export const setUserRating = async (req, res) => {
       return res.status(400).send("Valid email address is required");
     }
     await UserRating.updateOne(
-      { email, date, managerEmail },
+      { email, date, },
       {
         $set: {
           [`${title}.${question}`]: rating,
