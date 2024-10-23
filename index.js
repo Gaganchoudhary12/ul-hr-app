@@ -9,6 +9,7 @@ import bannerRouter from './src/routes/banner.js'
 import eventsRouter from './src/routes/events.js'
 import reportingRouter from './src/routes/reporting.js'
 import managerRouter from './src/routes/manager.js'
+import ideasRouter from './src/routes/ideas.js'
 
 const app = express();
 app.use(express.json());
@@ -31,6 +32,7 @@ app.use(`${baseRoute}/feedback`, feedbackRouter)
 app.use(`${baseRoute}/banner`, bannerRouter)
 app.use(`${baseRoute}/events`, eventsRouter)
 app.use(`${baseRoute}/reporting`, reportingRouter)
+app.use(`${baseRoute}/ideas`, ideasRouter)
 
 app.listen(8002, () => {
     console.log('Server running on port 8002');
