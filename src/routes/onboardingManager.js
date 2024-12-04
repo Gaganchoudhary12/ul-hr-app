@@ -1,5 +1,5 @@
 import express from 'express'
-import { getUserRating,setUserRating } from '../controllers/manager.controller.js'
+import { getUserRating,setUserRating } from '../controllers/onboardingManager.controller.js'
 
 const onboardingManagerRouter = express.Router();
 
