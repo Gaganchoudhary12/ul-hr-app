@@ -4,7 +4,7 @@ import { isValidEmail } from "../util/emailValidation.js";
 export const setEmployeeRating = async (req, res) => {
   const { email, title, question, rating, days } = req.body;
   try {
-    if (!email || !title || !question || !rating || days) {
+    if (!email || !title || !question || !rating || !days) {
       const missingFields = [
         !email && "email",
         !title && "title",
