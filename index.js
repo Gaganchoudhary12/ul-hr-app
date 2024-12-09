@@ -13,6 +13,7 @@ import ideasRouter from './src/routes/ideas.js'
 import onboardingQuestionRouter from './src/routes/onboardingQuestion.js'
 import onboardingEmployeeRouter from './src/routes/onboardingEmployee.js'
 import onboardingManagerRouter from './src/routes/onboardingManager.js'
+import leaderBoardRouter from './src/routes/leaderBoard.js'
 
 const app = express();
 app.use(express.json());
@@ -39,6 +40,7 @@ app.use(`${baseRoute}/ideas`, ideasRouter)
 app.use(`${baseRoute}/onboarding-questions`, onboardingQuestionRouter)
 app.use(`${baseRoute}/onboarding-employee`, onboardingEmployeeRouter)
 app.use(`${baseRoute}/onboarding-manager`, onboardingManagerRouter)
+app.use(`${baseRoute}/leader-board`, leaderBoardRouter)
 
 app.listen(8002, () => {
     console.log('Server running on port 8002');
